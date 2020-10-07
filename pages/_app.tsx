@@ -4,8 +4,9 @@ import 'antd/dist/antd.css';
 import { Layout, Row, Col } from 'antd';
 
 const { Header, Footer, Content } = Layout;
+import { Provider, Session } from 'next-auth/client'
+export default function App({ Component, pageProps }: { Component: FC, pageProps: { session: Session } }) {
 
-export default function App({ Component }: { Component: FC }) {
   return (
     <>
       <Layout style={{ minHeight: "100vh" }}>
@@ -13,7 +14,9 @@ export default function App({ Component }: { Component: FC }) {
         <Content style={{ padding: '0 50px' }}>
           <Row justify="center">
             <Col span={20}>
-              <Component />
+              <Provider session={pageProps.session}>
+                <Component />
+              </Provider>
             </Col>
           </Row>
         </Content>
