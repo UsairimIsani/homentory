@@ -1,12 +1,16 @@
-import Head from 'next/head'
-// import styles from '../styles/Home.module.css'
-export default function Home() {
-  return (
-    <div>
-      <Head >
+import React from 'react'
+import Link from "next/link"
+import { Button } from "antd";
 
-      </Head>
-    hello
-    </div>
-  )
+export default function Page() {
+
+  return <>
+
+    <Button type="default">
+      <Link href="/home">
+        Hello
+      </Link>
+    </Button>
+  </>
+
 }
