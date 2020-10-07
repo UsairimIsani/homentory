@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import '../styles/globals.css'
+import '../../styles/globals.css'
 import 'antd/dist/antd.css'
 import { Layout, Row, Col } from 'antd'
 
